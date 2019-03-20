@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<title>Lesson 3</title>
+	</head>
+	<body>
+		<script>
+			"use strict";
+
+			//task 1  Выглядит как костыль, но это единственный способ из множества испробованных, который сработал:)
+
+			let a = [
+ 				[{name: 'Mary', age: 23}, {name: 'Mike', age: 45}, {name: 'Nick', age: 11}],
+ 				[{name: 'Adam', age: 56}, {name: 'Sara', age: 21}, {name: 'Don', age: 22}],
+ 				[{name: 'Karl', age: 34}, {name: 'Marta', age: 76}, {name: 'John', age: 19}]
+			];
+			console.log('a', a);
+
+			let b = [
+				[Object.assign({}, a[0][0]), Object.assign({}, a[0][1]), Object.assign({}, a[0][2])],
+				[Object.assign({}, a[1][0]), Object.assign({}, a[1][1]), Object.assign({}, a[1][2])],
+				[Object.assign({}, a[2][0]), Object.assign({}, a[2][1]), Object.assign({}, a[2][2])]
+			];
+			console.log('b', b);
+
+			a[0][0].name = 'Julia';
+
+			//task 2
+
+			let cart = [ 
+				{name: 'Клубника', price: 350}, 
+				{name: 'Черника', price: 370},
+				{name: 'Морошка', price: 200},
+				{name: 'Малина', price: 400},
+				{name: 'Ежевика', price: 550},
+				{name: 'Вишня', price: 150} 
+			]; 
+
+			function countBasketPrice () {
+				let totalQuantity = 0;
+				cart.forEach(item => { 
+					totalQuantity = totalQuantity + item.price
+				}) 
+				return console.log('Стоимость товаров: ' + totalQuantity + ' руб.');
+			};
+
+			countBasketPrice ();
+
+			//task 3
+
+			for (let i = 0; i < 10; console.log(i++)) {
+				//none
+			};	
+
+			// //task 4
+
+			let x = '';
+
+			for (let i = 0; i < 20; i++) {
+				console.log(x += 'x');
+			};
+
+		</script>
+	</body>
+</html>

@@ -61,18 +61,23 @@
 
 			//task 5
 
-			/* Использовала return вместо break потому, что захотела проверить работоспособность функции через консоль. При использвании break консоль выводила undefined. Это нормальное поведение? */
 			function mathOperation(arg1, arg2, operation) { 
+				let result = 0;
 				switch (operation) {
 					case 'add':
 						return addNumbers(arg1, arg2);
+						break;
 					case 'substract':
 						return substractNumbers(arg1, arg2);
+						break;
 					case 'multiply':
 						return multiplyNumbers(arg1, arg2);
+						break;
 					case 'divide': 
-						return divideNumbers(arg1, arg2);		
+						return divideNumbers(arg1, arg2);
+						break;		
 				}
+				return result;
 			}
 			console.log('add', mathOperation(100, 30, 'add'));
 			console.log('substract', mathOperation(100, 30, 'substract'));
