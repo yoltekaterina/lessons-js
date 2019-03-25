@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 4</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    //task 1
+
+    let incomeNumber = prompt('Введите число от 0 до 999');
+
+    function numberToObject(incomeNumber) {
+        let splitedNumbers = Array.from(String(incomeNumber), Number);
+        let finalNumber = { one: 0, ten: 0, hundred: 0 };
+
+    if (Number(incomeNumber) <= 999) {
+        if (splitedNumbers.length === 1) {
+            finalNumber.one = splitedNumbers[0]
+        } else if (splitedNumbers.length === 2) {
+            finalNumber.one = splitedNumbers[1];
+            finalNumber.ten = splitedNumbers[0]
+        } else if (splitedNumbers.length === 3) {
+            finalNumber.one = splitedNumbers[2];
+            finalNumber.ten = splitedNumbers[1];
+            finalNumber.hundred = splitedNumbers[0]
+        }
+    } else {
+        finalNumber = {};
+        console.log('Нужно было ввести число от 0 до 999');
+    }
+    console.log(finalNumber);
+    };
+
+    numberToObject(incomeNumber);
+
+</script>
+</body>
+</html>
