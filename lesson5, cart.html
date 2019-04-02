@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 5, cart</title>
+</head>
+<body>
+
+<style>
+
+    div {
+        font-family: sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: #000000;
+    }
+
+</style>
+
+<script>
+    "use strict";
+
+    let Basket = {
+        goodList: [],
+        countTotalPrice () {
+            let totalPrice = 0;
+            for (let i = 0; i < this.goodList.length; i++) {
+                totalPrice += this.goodList[i].price * this.goodList[i].count;
+            }
+            return totalPrice;
+        },
+        countTotalNumber () {
+            let productQuantity = 0;
+            for (let i = 0; i < this.goodList.length; i++) {
+                productQuantity += this.goodList[i].count;
+            }
+            return productQuantity;
+        },
+        putProduct () {
+            for (let i = 0; i < priceList.length; i+=2) {
+                priceList[i].count = 1;
+                this.goodList.push(priceList[i])
+            }
+            for (let i = 1; i < priceList.length; i+=2) {
+                priceList[i].count = 2;
+                this.goodList.push(priceList[i])
+            }
+        }
+    };
+
+    let priceList = [
+        {name: 'Клубника', price: 350},
+        {name: 'Черника', price: 370},
+        {name: 'Морошка', price: 200},
+        {name: 'Малина', price: 400},
+        {name: 'Ежевика', price: 550},
+        {name: 'Вишня', price: 150}
+    ];
+
+    function showResult () {
+        let result = document.createElement('div');
+        if (Basket.goodList.length) {
+            result.innerText = `В корзине: ${Basket.countTotalNumber()} товаров на сумму ${Basket.countTotalPrice()} рублей`;
+        } else {
+            result.innerText = `Корзина	пуста`;
+        }
+        document.body.appendChild(result);
+    }
+
+    Basket.putProduct();
+    Basket.countTotalPrice();
+    Basket.countTotalNumber();
+    showResult();
+
+</script>
+</body>
+</html>

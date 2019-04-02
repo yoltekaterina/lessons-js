@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 4, part 2</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    //lesson 4, task 2
+
+    let Basket = {
+        goodList: [],
+        countTotalPrice () {
+            let totalPrice = 0;
+            for (let i = 0; i < this.goodList.length; i++) {
+                totalPrice += this.goodList[i].price * this.goodList[i].count;
+            }
+            console.log('Стоимость товаров: ' + totalPrice + ' руб.')
+        },
+        countTotalNumber () {
+            let productQuantity = 0;
+            for (let i = 0; i < this.goodList.length; i++) {
+                productQuantity += this.goodList[i].count;
+            }
+            console.log('Товаров в корзине: ' + productQuantity + '.')
+        },
+        putProduct () {
+            for (let i = 0; i < priceList.length; i+=2) {
+                priceList[i].count = 1;
+                this.goodList.push(priceList[i])
+            }
+            for (let i = 1; i < priceList.length; i+=2) {
+                priceList[i].count = 2;
+                this.goodList.push(priceList[i])
+            }
+        }
+    };
+
+    let priceList = [
+        {name: 'Клубника', price: 350},
+        {name: 'Черника', price: 370},
+        {name: 'Морошка', price: 200},
+        {name: 'Малина', price: 400},
+        {name: 'Ежевика', price: 550},
+        {name: 'Вишня', price: 150}
+    ];
+
+    Basket.putProduct();
+    Basket.countTotalPrice();
+    Basket.countTotalNumber();
+
+</script>
+</body>
+</html>
